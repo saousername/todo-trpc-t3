@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 
-import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
 
 import { TRPCReactProvider } from "@/trpc/react";
@@ -12,7 +11,7 @@ import { cn } from "@/lib/utils";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
+});
 
 export const metadata = {
   title: "Create T3 App",
@@ -29,8 +28,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background w-full font-sans antialiased",
-          fontSans.variable
+          "min-h-screen w-full bg-background font-sans antialiased",
+          fontSans.variable,
         )}
       >
         <TRPCReactProvider cookies={cookies().toString()}>
